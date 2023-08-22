@@ -1,0 +1,26 @@
+<app-header></app-header>
+<div class="container1">
+    <div class="attrib"  *ngFor="let item of  tableProduit">
+        <div class="card">
+            <img src="{{item.photo}}" alt="" class="card-img-top">
+            <div class="card-body">
+                <h5>{{item.libProduit}}</h5>
+                <p class="card-text">{{item.desc}}</p>
+                <table >
+                    <tr>
+                        <td>
+                            <a href="connecter/{{item._id}}" class="btn btn-primary">Acheter</a>
+                        </td>
+                        <td>
+                            <p class="prix">{{item.prix}} DT</p>
+                        </td>
+                    </tr>
+                </table>
+                
+                
+            </div>
+        </div>
+    </div>
+    
+
+</div>

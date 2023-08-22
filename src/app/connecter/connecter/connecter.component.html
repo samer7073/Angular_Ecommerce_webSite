@@ -1,0 +1,15 @@
+<app-header></app-header>
+<div class="box">
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Email" name="email" [(ngModel)]="email" autocomplete="off"
+        
+        >
+        
+    <div class="form-group">
+        <input type="password" class="form-control" placeholder="Mot de passe" name="mot de passe" [(ngModel)]="motpass" autocomplete="off"
+        
+        >
+        
+    <button type="button" class="btn btn-primary" (click)="verifier()">connecter</button>
+    <a href="ajouterClient/{{id_produit}}">créer un compte</a>/<a href="obliermotpasse/{{id_produit}}">mot de passe oblier</a>
+</div>

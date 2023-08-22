@@ -1,0 +1,53 @@
+
+.container1{
+   
+    border-radius: 30px;
+    
+    
+    
+     display: flex;
+     flex-flow: row wrap;
+     
+ }
+ .attrib{
+ 
+     /*
+     flex: 1;
+     
+     padding: 0.5%;
+     
+     */
+     padding: 10px;
+     border-radius: 30px;
+     
+     padding-bottom: 0.5cm; 
+ 
+ 
+ }
+ 
+ .card{
+     width: 350px;
+     height: 100%;
+    
+ }
+ button{
+     float: right;
+     display: flex;
+     
+   
+ }
+ .prix{
+     color: red;
+     font-style: oblique;
+     font-size: 25px;
+ 
+ }
+ table{
+    float: right;
+ }
+ button{
+    float: left;
+ }
+ a{
+    float: left;
+ }

@@ -1,0 +1,103 @@
+
+<app-header-admin></app-header-admin>
+<!--(submit)="onSubmit(form)"-->
+<!--type="submit()"-->
+<form  #form="ngForm"  (submit)="onSubmit(form)">
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Libellé de Produit</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1"  [(ngModel)]="produits.libProduit" [ngModelOptions]="{standalone: true}"  placeholder="{{tableProduit.libProduit}}" value="samer" 
+      ngModel 
+      name="lib"
+      #lib="ngModel"
+      required
+      maxlength="20"
+      minlength="3" >
+      <div class="alert alert-danger" *ngIf="lib.touched && !lib.valid">
+        
+       
+        <div *ngIf="lib.errors?.['required']">champ obligatoire</div>
+        <div *ngIf="lib.errors?.['maxlength']">au maximum 20 caractères</div>
+        <div *ngIf="lib.errors?.['minlength']">au minimum 3 caractères</div>
+      </div>
+      
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlInput1">Quantité</label>
+        <input type="number" class="form-control" id="exampleFormControlInput1" [(ngModel)]="produits.qteProduit" [ngModelOptions]="{standalone: true}"   placeholder="{{tableProduit.qteProduit}}"
+        ngModel 
+        name="qte"
+        #qte="ngModel"
+        required
+        maxlength="100"
+        minlength="1"
+        >
+        <div class="alert alert-danger" *ngIf="qte.touched && !qte.valid">
+        
+       
+          <div *ngIf="qte.errors?.['required']">champ obligatoire</div>
+          <div *ngIf="qte.errors?.['maxlength']">au maximum 100 caractères</div>
+          <div *ngIf="qte.errors?.['minlength']">au minimum 1 caractères</div>
+        </div>
+
+
+
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlInput1">Photo</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" [(ngModel)]="produits.photo"  [ngModelOptions]="{standalone: true}"   placeholder="{{tableProduit.photo}}"
+        ngModel 
+        name="Photo"
+        #Photo="ngModel"
+        required
+        maxlength="100"
+        minlength="1"
+        >
+
+        <div class="alert alert-danger" *ngIf="Photo.touched && !Photo.valid">
+        
+       
+          <div *ngIf="Photo.errors?.['required']">champ obligatoire</div>
+
+        </div>
+    </div>
+  
+  
+
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Description </label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="produits.desc" [ngModelOptions]="{standalone: true}"    placeholder="{{tableProduit.desc}}"
+      name="Description"
+      #Description="ngModel"
+      required
+      maxlength="10000"
+      minlength="5"
+      ></textarea>
+      <div class="alert alert-danger" *ngIf="Description.touched && !Description.valid">
+        
+       
+        <div *ngIf="Description.errors?.['required']">champ obligatoire</div>
+        <div *ngIf="Description.errors?.['maxlength']">au maximum 10000 caractères</div>
+        <div *ngIf="Description.errors?.['minlength']">au minimum 5 caractères</div>
+      </div>
+
+
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlInput1">Prix</label>
+        <input type="number" class="form-control" id="exampleFormControlInput1"  [(ngModel)]="produits.prix" [ngModelOptions]="{standalone: true}"  placeholder="{{tableProduit.prix}}"
+        name="Prix"
+        #Prix="ngModel"
+        required
+        maxlength="10000"
+        minlength="1"
+        >
+        <div class="alert alert-danger" *ngIf="Prix.touched && !Prix.valid">
+        
+       
+          <div *ngIf="Prix.errors?.['required']">champ obligatoire</div>
+          <div *ngIf="Prix.errors?.['maxlength']">au maximum 10000 caractères</div>
+          <div *ngIf="Prix.errors?.['minlength']">au minimum 1 caractères</div>
+        </div>
+    </div>
+    <button type="submit()" class="btn btn-primary" >Editer</button>
+  </form>

@@ -1,0 +1,60 @@
+<app-header-admin></app-header-admin>
+<form  #form="ngForm"  (submit)="onSubmit(form)">
+    
+    
+    <div class="form-group">
+        <label for="exampleFormControlInput1">Nom</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" [(ngModel)]="admin.nom" [ngModelOptions]="{standalone: true}" 
+        ngModel 
+        name="nom"
+        #nom="ngModel"
+        required
+        minlength="3"
+        maxlength="20"
+        
+        
+        >
+        <div class="alert alert-danger" *ngIf="nom.touched && !nom.valid">
+        
+       
+          <div *ngIf="nom.errors?.['required']">champ obligatoire</div>
+          <div *ngIf="nom.errors?.['minlength']">au minimum 3 caractères</div>
+          <div *ngIf="nom.errors?.['maxlength']">au maximum 20 caractères</div>
+          
+        </div>
+    </div>
+   
+
+
+
+
+
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Mot de Passe</label>
+      <input type="password" class="form-control" id="exampleFormControlInput1"  [(ngModel)]="admin.motPass" [ngModelOptions]="{standalone: true}" 
+      name="password"
+      #password="ngModel"
+      required
+      minlength="3"
+      maxlength="30"
+      >
+
+
+      <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
+        
+       
+        <div *ngIf="password.errors?.['required']">champ obligatoire</div>
+        <div *ngIf="password.errors?.['minlength']">au minimum 6 caractères</div>
+        <div *ngIf="password.errors?.['maxlength']">au maximum 30 caractères</div>
+        
+      </div>
+    </div> 
+
+
+
+
+  
+
+
+    <button type="button" class="btn btn-primary" type="submit()">Ajouter</button>
+  </form>

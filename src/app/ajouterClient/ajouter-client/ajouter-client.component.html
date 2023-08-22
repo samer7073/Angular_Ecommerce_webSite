@@ -1,0 +1,155 @@
+<app-header></app-header>
+<form  #form="ngForm"  (submit)="onSubmit(form)">
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Cin</label>
+      <input type="number" class="form-control" id="exampleFormControlInput1" [(ngModel)]="client.cin" [ngModelOptions]="{standalone: true}" 
+      ngModel 
+      name="cin"
+      #cin="ngModel"
+      required
+      max="99999999"
+      min="1"
+      
+      
+      
+      >
+      <div class="alert alert-danger" *ngIf="cin.touched && !cin.valid">
+        
+       
+        <div *ngIf="cin.errors?.['required']">champ obligatoire</div>
+        <div *ngIf="cin.errors?.['max']">au maximum 8 caractères</div>
+        <div *ngIf="cin.errors?.['min']">au minimum 1 caractères</div>
+      </div>
+
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlInput1">Nom</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" [(ngModel)]="client.nom" [ngModelOptions]="{standalone: true}" 
+        ngModel 
+        name="nom"
+        #nom="ngModel"
+        required
+        minlength="3"
+        maxlength="20"
+        
+        
+        >
+        <div class="alert alert-danger" *ngIf="nom.touched && !nom.valid">
+        
+       
+          <div *ngIf="nom.errors?.['required']">champ obligatoire</div>
+          <div *ngIf="nom.errors?.['minlength']">au minimum 3 caractères</div>
+          <div *ngIf="nom.errors?.['maxlength']">au maximum 20 caractères</div>
+          
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlInput1">Prenom</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" [(ngModel)]="client.prenom"  [ngModelOptions]="{standalone: true}"
+        ngModel 
+        name="prenom"
+        #prenom="ngModel"
+        required
+        minlength="3"
+        maxlength="20"
+        
+        >
+        <div class="alert alert-danger" *ngIf="prenom.touched && !prenom.valid">
+        
+       
+          <div *ngIf="prenom.errors?.['required']">champ obligatoire</div>
+          <div *ngIf="prenom.errors?.['minlength']">au minimum 3 caractères</div>
+          <div *ngIf="prenom.errors?.['maxlength']">au maximum 20 caractères</div>
+          
+        </div>
+    </div>
+  
+  
+
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Adresse </label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="client.adress" [ngModelOptions]="{standalone: true}"  
+      ngModel 
+      name="Adresse"
+      #Adresse="ngModel"
+      required
+      minlength="5"
+      maxlength="100"
+      
+      ></textarea>
+
+      <div class="alert alert-danger" *ngIf="Adresse.touched && !Adresse.valid">
+        
+       
+        <div *ngIf="Adresse.errors?.['required']">champ obligatoire</div>
+        <div *ngIf="Adresse.errors?.['minlength']">au minimum 3 caractères</div>
+        <div *ngIf="Adresse.errors?.['maxlength']">au maximum 20 caractères</div>
+        
+      </div>
+
+
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlInput1">Email</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1"  [(ngModel)]="client.email" [ngModelOptions]="{standalone: true}"
+        ngModel 
+        name="email"
+        #email="ngModel"
+        required
+        minlength="10"
+        maxlength="30"
+        >
+        <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
+        
+       
+          <div *ngIf="email.errors?.['required']">champ obligatoire</div>
+          <div *ngIf="email.errors?.['minlength']">au minimum 10 caractères</div>
+          <div *ngIf="email.errors?.['maxlength']">au maximum 30 caractères</div>
+          
+        </div>
+
+
+
+
+
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Mot de Passe</label>
+      <input type="password" class="form-control" id="exampleFormControlInput1"  [(ngModel)]="client.motPass" [ngModelOptions]="{standalone: true}" 
+      name="password"
+      #password="ngModel"
+      required
+      minlength="6"
+      maxlength="30"
+      >
+
+
+      <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
+        
+       
+        <div *ngIf="password.errors?.['required']">champ obligatoire</div>
+        <div *ngIf="password.errors?.['minlength']">au minimum 6 caractères</div>
+        <div *ngIf="password.errors?.['maxlength']">au maximum 30 caractères</div>
+        
+      </div>
+
+
+
+
+  </div>
+  <div class="form-group">
+    <label for="confirmPassword">Confirmer motpasse</label>
+    <input type="password" name="confirmPassword" id="confirmPassword" class="form-control"
+    #confirmPassword="ngModel" [(ngModel)]="conf" pattern="{{client.motPass}}" required>
+
+    <div class="alert alert-danger" *ngIf="confirmPassword.touched && !confirmPassword.valid">
+        
+       
+      <div *ngIf="confirmPassword.errors?.['required']">champ obligatoire</div>
+
+      
+    </div>
+
+  </div>
+    <button type="button" class="btn btn-primary" type="submit()">Créer</button>
+  </form>

@@ -1,0 +1,31 @@
+
+<app-header-admin></app-header-admin>
+
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Quantité Commandée</th>
+        <th scope="col">Date Commande </th>
+        <th scope="col">Nom client</th>
+        <th scope="col">Adresse</th>
+        <th scope="col">libellé de produit</th>
+        <th scope="col">Changer</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of tabCommande ; let index=index ">
+        <th scope="row">{{item._id}}</th>
+        <td>{{item.qteC}}</td>
+        <td>{{item.dateC}}</td>
+        <td>{{item.client.nom}}</td>
+        <td>{{item.client.adress}}</td>
+        <td>{{item.produit.libProduit}}</td>
+        <td>
+            <button type="button" class="btn btn-danger" (click)="deleteCommande(item)">Supprimer</button>
+           
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>

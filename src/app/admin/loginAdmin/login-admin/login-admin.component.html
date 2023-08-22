@@ -1,0 +1,33 @@
+<app-header></app-header>
+<div class="box">
+    <div class="box">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Nom Admin" name="nom" [(ngModel)]="nom"
+            ngModel 
+            name="Admin"
+            #Admin="ngModel"
+            required
+            maxlength="100"
+            minlength="3"
+            
+            >
+            <div class="alert alert-danger" *ngIf="Admin.touched && !Admin.valid">
+        
+       
+                <div *ngIf="Admin.errors?.['required']">champ obligatoire</div>
+                <div *ngIf="Admin.errors?.['maxlength']">au maximum 100 caractères</div>
+                <div *ngIf="Admin.errors?.['minlength']">au minimum 3 caractères</div>
+              </div>
+            
+            
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" placeholder="Mot de passe" name="mot de passe" [(ngModel)]="motpass"
+            
+            >
+            
+        <button type="button" class="btn btn-primary" (click)="verifier()">connecter</button>
+        
+    </div>
+
+</div>

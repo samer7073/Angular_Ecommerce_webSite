@@ -1,0 +1,52 @@
+<app-header-admin></app-header-admin>
+
+<div class="container1">
+    <div class="attrib"  *ngFor="let item of  tableProduit ; let index=index">
+        <div class="card">
+            <img src="{{item.photo}}" alt="" class="card-img-top">
+            <div class="card-body">
+                <h5>{{item.libProduit}}</h5>
+                <p class="card-text">{{item.desc}}</p>
+       
+
+                
+                
+                <table>
+                    <tr>
+                        <td>
+                            <button type="button" class="btn btn-primary">Achter</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a  href="editer/{{tableProduit[index]._id}}" class="btn btn-dark">Editer</a>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button type="button" class="btn btn-danger" (click)="deleteProduit(item)">Supprimer</button>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            Quantité
+                        </td>
+                        <td>
+                            {{item.qteProduit}}
+                        </td>
+                    </tr>
+                </table>
+                
+                
+                
+                <p class="prix">{{item.prix}} DT</p>
+            </div>
+        </div>
+    </div>
+    
+
+</div>
+
+
